@@ -1,4 +1,4 @@
-import { useLoaderData, useParams } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 
 const JobDetails = () => {
   // Fetching the job data from the router
@@ -166,6 +166,11 @@ const JobDetails = () => {
           </div>
         </div>
       </div>
+      <Link to="/">
+        <button className="mt-4 ml-80 w-auto btn btn-outline rounded-full btn-secondary px-20">
+          Go To Back Home
+        </button>
+      </Link>
     </div>
   );
 };
