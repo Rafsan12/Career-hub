@@ -157,8 +157,8 @@ const JobDetails = () => {
           </div>
 
           {/* Apply now button centered at the bottom */}
-          <div className="flex justify-center items-end h-full pb-4">
-            <button className="btn-primary px-4 py-2 bg-indigo-600 text-white rounded-md">
+          <div className="flex justify-center items-end">
+            <button className="btn-primary px-4 py-2 bg-indigo-600 w-full   text-white rounded">
               Apply Now
             </button>
           </div>
