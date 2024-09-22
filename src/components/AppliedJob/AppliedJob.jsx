@@ -1,3 +1,4 @@
+/* eslint-disable no-case-declarations */
 import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { getStoredJobApplication } from "../../utlity/LocalStroage";
@@ -5,6 +6,33 @@ import { getStoredJobApplication } from "../../utlity/LocalStroage";
 const AppliedJob = () => {
   const jobs = useLoaderData();
   const [appliedJobs, setAppliedJobs] = useState([]);
+  const [displayJobs, setDisplayJobs] = useState([]);
+
+  const handleJobsFilter = (filter) => {
+    switch (filter) {
+      case "all":
+        setDisplayJobs(appliedJobs);
+        break;
+
+      case "remote":
+        const remoteJobs = appliedJobs.filter(
+          (job) => job.remote_or_onsite === "Remote"
+        );
+        setDisplayJobs(remoteJobs);
+        break;
+
+      case "onsite":
+        const onsiteJobs = appliedJobs.filter(
+          (job) => job.remote_or_onsite === "Onsite"
+        );
+        setDisplayJobs(onsiteJobs);
+        break;
+
+      default:
+        setDisplayJobs(appliedJobs);
+        break;
+    }
+  };
 
   useEffect(() => {
     const storedJobsId = getStoredJobApplication();
@@ -19,6 +47,7 @@ const AppliedJob = () => {
         }
       }
       setAppliedJobs(jobApplication);
+      setDisplayJobs(jobApplication);
     }
   }, [jobs]);
 
@@ -27,8 +56,22 @@ const AppliedJob = () => {
       <h1 className="text-3xl text-center">
         Jobs Applied : {appliedJobs.length}
       </h1>
+      <details className="dropdown mb-32">
+        <summary className="m-1 btn px-12 bg-amber-200">Filter</summary>
+        <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+          <li onClick={() => handleJobsFilter("all")}>
+            <a>All</a>
+          </li>
+          <li onClick={() => handleJobsFilter("remote")}>
+            <a>Remote</a>
+          </li>
+          <li onClick={() => handleJobsFilter("onsite")}>
+            <a>onsite</a>
+          </li>
+        </ul>
+      </details>
       <div>
-        {appliedJobs.map((job) => (
+        {displayJobs.map((job) => (
           <div key={job.id} className="card lg:card-side bg-base-100 shadow-xl">
             <figure>
               <img src={job.logo} alt="Album" />
