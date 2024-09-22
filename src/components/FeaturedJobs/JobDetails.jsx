@@ -1,4 +1,7 @@
 import { Link, useLoaderData, useParams } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { saveJob } from "../../utlity/LocalStroage";
 
 const JobDetails = () => {
   // Fetching the job data from the router
@@ -14,6 +17,11 @@ const JobDetails = () => {
   const job = jobs.find((job) => job.id === idInt);
 
   console.log(job); // Logging the job object for debugging
+
+  const handleApplyJob = () => {
+    saveJob(id);
+    toast("We have applied successfully !");
+  };
 
   return (
     <div>
@@ -80,14 +88,14 @@ const JobDetails = () => {
             </h1>
 
             {/* Job title */}
-            <h1 className="flex">
+            <h1 className="flex mt-4">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 stroke="currentColor"
-                className="size-6 mr-2"
+                className="size-6 "
               >
                 <path
                   strokeLinecap="round"
@@ -160,7 +168,10 @@ const JobDetails = () => {
 
           {/* Apply now button centered at the bottom */}
           <div className="flex justify-center items-end">
-            <button className="btn-primary px-4 py-2 bg-indigo-600 w-full   text-white rounded">
+            <button
+              onClick={handleApplyJob}
+              className="btn-primary px-4 py-2 bg-indigo-600 w-full   text-white rounded"
+            >
               Apply Now
             </button>
           </div>
@@ -171,6 +182,7 @@ const JobDetails = () => {
           Go To Back Home
         </button>
       </Link>
+      <ToastContainer />
     </div>
   );
 };
