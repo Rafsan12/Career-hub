@@ -19,7 +19,7 @@ const JobDetails = () => {
   console.log(job); // Logging the job object for debugging
 
   const handleApplyJob = () => {
-    saveJob(id);
+    saveJob(idInt);
     toast("We have applied successfully !");
   };
 
