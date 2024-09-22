@@ -18,7 +18,9 @@ const JobDetails = () => {
   return (
     <div>
       {/* Displaying the job title */}
-      <h2>Job Details: {job.job_title}</h2>
+      <h2 className="text-5xl text-center mb-8">
+        Job Details: {job.job_title}
+      </h2>
 
       {/* Main grid layout with job description and details */}
       <div className="grid gap-4 md:grid-cols-4">
