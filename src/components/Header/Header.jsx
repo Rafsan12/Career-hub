@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import Dark from "../Dark/Dark";
 const Header = () => {
   const links = (
     <>
@@ -21,7 +22,7 @@ const Header = () => {
     </>
   );
   return (
-    <div className="navbar  bg-white">
+    <div className="navbar   bg-white  dark:bg-gray-900 dark:text-white ">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -55,8 +56,9 @@ const Header = () => {
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end">
-        <a className="btn btn-primary rounded-3xl">Star Applying</a>
+        <a className="btn btn-primary rounded-3xl mr-4">Star Applying</a>
       </div>
+      <Dark />
     </div>
   );
 };

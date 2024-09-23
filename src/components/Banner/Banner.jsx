@@ -2,7 +2,7 @@ import User from "../../../assets/images/user.png";
 
 const Banner = () => {
   return (
-    <div className="hero  min-h-screen">
+    <div className="hero  min-h-screen  bg-white  dark:bg-gray-900 dark:text-white ">
       <div className="hero-content flex-col lg:flex-row-reverse">
         <img src={User} className="max-w-sm rounded-lg shadow-xl" />
         <div>

@@ -70,9 +70,12 @@ const AppliedJob = () => {
           </li>
         </ul>
       </details>
-      <div>
+      <div className="mt-4">
         {displayJobs.map((job) => (
-          <div key={job.id} className="card lg:card-side bg-base-100 shadow-xl">
+          <div
+            key={job.id}
+            className="card lg:card-side  bg-white  dark:bg-gray-900 dark:text-white shadow-xl"
+          >
             <figure>
               <img src={job.logo} alt="Album" />
             </figure>
