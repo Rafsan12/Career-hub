@@ -8,7 +8,7 @@ const FeaturedJobs = () => {
   useEffect(() => {
     const jobData = async () => {
       try {
-        const res = await fetch("/data/jobs.json");
+        const res = await fetch("jobs.json");
 
         const result = await res.json();
         setJobs(result);

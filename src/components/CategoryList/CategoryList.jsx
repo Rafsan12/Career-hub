@@ -6,7 +6,7 @@ const CategoryList = () => {
   useEffect(() => {
     const categoryData = async () => {
       try {
-        const res = await fetch("/data/categories.json");
+        const res = await fetch("categories.json");
         const result = await res.json();
         setCategorys(result);
       } catch (error) {
