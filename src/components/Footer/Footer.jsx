@@ -2,7 +2,7 @@ import Footerimg from "../../../assets/icons/social.png";
 
 const Footer = () => {
   return (
-    <footer className=" bg-base-200 text-base-content p-10 mt-4">
+    <footer className=" bg-white text-black dark:bg-gray-900 dark:text-white  text-base-content p-10 mt-4">
       <div className="footer max-w-6xl mx-auto">
         <aside>
           <a className="btn btn-active btn-accent text-xl rounded-full">

@@ -12,7 +12,7 @@ const Job = ({ job }) => {
     salary,
   } = job;
   return (
-    <div className="card bg-base-100  shadow-xl mt-12">
+    <div className="card bg-white  shadow-xl mt-12">
       <figure>
         <img src={logo} alt={company_name} />
       </figure>

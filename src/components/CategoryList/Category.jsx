@@ -2,7 +2,7 @@
 const Category = ({ category }) => {
   const { availability, category_name, logo } = category;
   return (
-    <div className="card bg-base-100  shadow-xl mt-14 mb-8">
+    <div className="card bg-white  shadow-xl mt-14 mb-8">
       <figure>
         <img src={logo} alt={category_name} />
       </figure>
