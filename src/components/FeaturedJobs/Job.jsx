@@ -14,7 +14,7 @@ const Job = ({ job }) => {
   return (
     <div className="card bg-base-100  shadow-xl mt-12">
       <figure>
-        <img src={logo} alt="Shoes" />
+        <img src={logo} alt={company_name} />
       </figure>
       <div className="card-body">
         <h2 className="card-title">{job_title}</h2>
